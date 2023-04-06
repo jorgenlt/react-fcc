@@ -1,4 +1,29 @@
 html, body {
     margin: 0;
     padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.nav-items {
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-items li:hover {
+    color: rgb(66, 130, 151);
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    height: 70px;
 }

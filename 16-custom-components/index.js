@@ -59,23 +59,17 @@ Part 2:
 
  */
 
-function Page() {
-  return (
-    <div>
-      <h1>Descriptive headline</h1>
-      <ol>
-        <li>reason 1</li>
-        <li>reason 2</li>
-      </ol>
-    </div>
-  )
-}
 
 function Header() {
   return (
     <header>
-      <nav>
-        <img src="./react-logo.png" width="60px" />
+      <nav className="nav">
+        <img src="./react-logo.png" className="logo" />
+        <ul className="nav-items">
+          <li>Pricing</li>
+          <li>About</li>
+          <li>Contact</li>
+        </ul>
       </nav>
     </header>
   )
@@ -83,20 +77,40 @@ function Header() {
 
 function Footer() {
   return (
-    <footer>© 2023 last name here development. All rights reserved.</footer>
+    <footer>
+      <small>© 2023 last name here development. All rights reserved.</small>
+    </footer>
   )
 }
 
-function MyApp() {
+function MainContent() {
   return (
     <div>
+    <h1>Descriptive headline</h1>
+    <ol>
+      <li>reason 1</li>
+      <li>reason 2</li>
+    </ol>
+  </div>
+  )
+}
+
+function Page() {
+  return (
+    <div className="container">
       <Header />
-      <Page />
+      <MainContent />
       <Footer />
     </div>
-  );
+  )
 }
+
+// function MyApp() {
+//   return (
+//       <Page />
+//   );
+// }
 
 const div = document.querySelector('#root');
 const root = ReactDOM.createRoot(div);
-root.render(<MyApp />);
+root.render(<Page />);
