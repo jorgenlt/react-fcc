@@ -1,0 +1,65 @@
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#nav {
+  display: flex;
+  justify-content: space-between;
+  width: 550px;
+  height: 90px;
+  background-color: #21222A;
+}
+
+#logo-wrapper {
+  color: #00D8FF;
+  font-size: 22px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  margin-left: 30px;
+}
+
+#logo-wrapper h2 {
+  margin-left: 10px;
+
+}
+
+#course-wrapper {
+  color: snow;
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  margin-right: 30px;
+}
+
+#main {
+  background-color: #282D35;
+  color: snow;
+  width: 550px;
+  height: 460px;
+}
+
+#main h1 {
+  font-size: 40px;
+  font-weight: 600;
+  margin-left: 30px;
+  margin-bottom: 40px;
+}
+
+#main ul {
+  margin-left: 30px;
+  width: 390px;
+}
+
+#main li {
+  margin-top: 20px;
+}
+
+li::marker {
+  color: #00D8FF;
+  font-size: 22px;
+}
