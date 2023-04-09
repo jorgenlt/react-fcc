@@ -1,26 +1,31 @@
 import Image from 'next/image'
-import katie from '../images/katie-zaferes.png'
 import star from '../images/star.png';
 
-export default function Card() {
+const imgSrc = "../images/"
+
+export default function Card(props) {
+    console.log(imgSrc + props.img);
     return (
         <div className="card">
             <Image 
-                src={katie}
                 className='card--image'
-                height={235}
+                src={props.img}
+                alt="some text"
+                height="fill"
+                width="fill"
             />
             <div className="card--stats">
                 <Image 
                     src={star}
+                    alt="star"
                     className='card--star'
                 />
-                <span>5.0</span>
-                <span className="gray">(6) • </span>
-                <span className="gray">USA</span>
+                <span>{props.rating}</span>
+                <span className="gray">({props.reviewCount})•</span>
+                <span className="gray">{props.country}</span>
             </div>
-            <p>Life Lessons with Katie Zaferes</p>
-            <p><span className="bold">From $136</span> / person</p>
+            <p>{props.title}</p>
+            <p><span className="bold">From ${props.price}</span> / person</p>
         </div>
     )
 }
