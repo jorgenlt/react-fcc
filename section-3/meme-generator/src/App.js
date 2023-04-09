@@ -1,9 +1,14 @@
 import './App.scss';
+import Header from './components/Header'
+import Meme from './components/Meme'
 
 function App() {
   return (
     <div className="container">
-      <h1>meme generator</h1>
+      <div className="wrapper">
+        <Header />
+        <Meme />
+      </div>
     </div>
   );
 }
