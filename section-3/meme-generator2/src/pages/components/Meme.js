@@ -1,4 +1,5 @@
 import React from 'react'
+import exportAsImage from '../../utils/exportAsImage'
 
 export default function Meme() {
     const [allMemeImages, setAllMemeImages] = React.useState()
@@ -53,6 +54,8 @@ export default function Meme() {
         fetchData();
     }, [])
 
+    const exportRef = React.useRef();
+    
     return (
         <div id="meme">
             <form>
@@ -76,7 +79,7 @@ export default function Meme() {
                 </div>
             </form>
             <button onClick={getMemeImage} >Get a new meme image</button>
-            <div className='meme-img'>
+            <div className='meme-img' ref={exportRef}>
                 <img 
                     src={meme.randomImage}
                     alt="meme"
@@ -84,6 +87,7 @@ export default function Meme() {
                 <h2 className='meme--text top-text'>{meme.topText}</h2>
                 <h2 className='meme--text bottom-text'>{meme.bottomText}</h2>
             </div>
+            <button onClick={() => exportAsImage(exportRef.current, "test")}>shot</button>
         </div>
     )
 }
