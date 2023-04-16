@@ -1,8 +1,15 @@
+import { React, useState } from 'react'
 import Head from 'next/head'
 import Navbar from "./components/Navbar"
 import Main from "./components/Main"
 
 export default function Home() {
+  const [darkMode, setDarkMode] = useState(false);
+
+  const toggleDarkMode = () => {
+    setDarkMode(prevDarkMode => !prevDarkMode);
+  }
+
   return (
     <>
       <Head>
@@ -12,8 +19,13 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="container">
-        <Navbar />
-        <Main />
+        <Navbar 
+          darkMode={darkMode}
+          toggleDarkMode={toggleDarkMode}
+        />
+        <Main 
+          darkMode={darkMode}
+        />
       </div>
     </>
   )
