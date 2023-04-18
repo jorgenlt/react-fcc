@@ -8,9 +8,7 @@ export default function Home() {
   }
   const [dice, setDice] = useState([])
 
-  useEffect(() => {
-    setDice(() => allNewDice());
-  }, [])
+  useEffect(() => setDice(() => allNewDice()), [])
 
   const diceElements = dice.map(num => <Die value={num} />)
 
